@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xiaomi</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="topBar">
+            <h1 class="logo">
+                <a href="#"><img src="img/xiaomi_logo.png" alt="Xiaomi"></a>
+            </h1>
+            <nav class="menu">
+                <button class="accountButton iconButton accountIcon white"></button>
+                <div id="accountDetail" class="dialogContainer smallDialog">
+                    <div id="accountTitle" class="dialogTop dialogTitle">
+                        <span>Connectez-vous !</span>
+                        <button class="accountButton iconButton closeIcon"></button>
+                    </div>
+                    <div id="accountContent" class="dialogMiddle">
+                        <form action="" method="post">
+                            <fieldset class="fieldset">
+                                <label class="label fullLabel">
+                                    <span class="labelTitle">Email</span>
+                                    <input class="textField" type="email" name="fakeEmail">
+                                </label>
+                            </fieldset>
+                            <fieldset class="fieldset">
+                                <label class="label fullLabel">
+                                    <span class="labelTitle">Mot de passe</span>
+                                    <input class="textField" type="password" name="fakePassword">
+                                </label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div id="accountActions" class="dialogBottom">
+                        <button id="accountConnectionButton" class="button textButton colored">Connexion</button>
+                    </div>
+                </div>
+                <div class="dialogOverlay accountButton"></div>
+            </nav>
+            <div class="cart">
+                <button class="cartButton iconButton cartIcon white" title="Panier">
+                    <span id="cartBadge" class="badge"></span>
+                </button>
+                <div id="cartDetail" class="dialogContainer">
+                    <div id="cartTitle" class="dialogTop dialogTitle">
+                        <span>Votre panier</span>
+                        <button class="cartButton iconButton closeIcon"></button>
+                    </div>
+                    <div id="cartContent" class="dialogMiddle">
+                        <div id="cartEmpty" class="cartEmpty">
+                            <span>Oh non, votre panier est vide !</span>
+                        </div>
+                    </div>
+                    <div id="cartPay" class="dialogBottom">
+                        <button id="cartPayButton" class="button textButton colored">Commander</button>
+                    </div>
+                </div>
+                <div class="dialogOverlay cartButton"></div>
+            </div>
+        </header>
+        <main>
+            <section class="highlightedProductContainer">
+                <article class="product highlightedProduct" data-productId="redminote5">
+                    <div class="productImage"></div>
+                    <div class="productContent">
+                        <h2>Redmi Note 5 - <span class="productPrice">199.99€</span></h2>
+                        <h3>Le smartphone le plus perfectionné de la gamme Redmi.</h3>
+                        <p>Le Redmi Note 5 offre des images de haute qualité même en cas de faible luminosité. La caméra principale de 1,4 μm pixels réalise des photos nettes et éclatantes. Le capteur secondaire offrant une profondeur de champ inégalée par les caméras de smartphone classiques, accentue encore cet effet.</p>
+                        <form class="formProduct" action="" method="get">
+                            <input class="productIdInput" type="hidden" name="productId" value="redminote5">
+                            <input class="productNameInput" type="hidden" name="productName" value="Redmi Note 5">
+                            <input class="productPriceInput" type="hidden" name="productPrice" value="199.99">
+                            <input class="productImageInput" type="hidden" name="productImage" value="redminote5_noir.png">
+                            <input class="productDescriptionInput" type="hidden" name="productDescription" value="Le smartphone le plus perfectionné de la gamme Redmi.">
+                            <fieldset class="fieldset">
+                                <label class="label forSelect">
+                                    <span class="labelTitle">Couleur</span>
+                                    <select class="productColorSelect select" name="productColor">
+                                        <option value="noir" selected="selected">Noir</option>
+                                        <option value="or">Or</option>
+                                        <option value="bleu">Bleu</option>
+                                    </select>
+                                </label>
+                            </fieldset>
+                            <fieldset class="fieldset">
+                                <label class="label">
+                                    <span class="labelTitle">Quantité</span>
+                                    <input class="productQuantityInput textField" type="number" name="productQuantity" min="1" step="1" value="1">
+                                </label>
+                            </fieldset>
+                            <button class="button containedButton" type="submit" value="submit" title="Ajouter au panier">Ajouter au panier</button>
+                        </form>
+                    </div>
+                </article>
+            </section>
+            <section class="productsContainer">
+                <article class="product listedProduct" data-productId="redmi6a">
+                    <div class="productImage">
+                        <img src="img/redmi6a_noir.png" alt="Redmi 6A">
+                        <div class="productThumbnails">
+                            <img src="img/redmi6a_noir.png" alt="Redmi 6A Noir">
+                            <img src="img/redmi6a_or.png" alt="Redmi 6A Or">
+                            <img src="img/redmi6a_bleu.png" alt="Redmi 6A Bleu">
+                        </div>
+                    </div>
+                    <div class="productContent">
+                        <h2>Redmi 6A - <span class="productPrice">119.99€</span></h2>
+                        <p>Aussi compact qu'efficace.</p>
+                        <form class="formProduct" action="" method="get">
+                            <input class="productIdInput" type="hidden" name="productId" value="redmi6a">
+                            <input class="productNameInput" type="hidden" name="productName" value="Redmi 6A">
+                            <input class="productImageInput" type="hidden" name="productImage" value="redmi6a_noir.png">
+                            <input class="productDescriptionInput" type="hidden" name="productDescription" value="Aussi compact qu'efficace.">
+                            <fieldset class="fieldset">
+                                <label class="label forSelect">
+                                    <span class="labelTitle">Couleur</span>
+                                    <select class="productColorSelect select" name="productColor">
+                                        <option value="noir" selected="selected">Noir</option>
+                                        <option value="or">Or</option>
+                                        <option value="bleu">Bleu</option>
+                                    </select>
+                                </label>
+                            </fieldset>
+                            <fieldset class="fieldset">
+                                <label class="label">
+                                    <span class="labelTitle">Quantité</span>
+                                    <input class="productQuantityInput textField" type="number" name="productQuantity" min="1" step="1" value="1">
+                                </label>
+                            </fieldset>
+                            <input class="productPriceInput" type="hidden" name="productPrice" value="119.99">
+                            <button class="button containedButton" type="submit" value="submit" title="Ajouter au panier">Ajouter au panier</button>
+                        </form>
+                    </div>
+                </article>
+                <article class="product listedProduct" data-productId="redmi5">
+                    <div class="productImage">
+                        <img src="img/redmi5_or.png" alt="Redmi 5">
+                        <div class="productThumbnails">
+                            <img src="img/redmi5_noir.png" alt="Redmi 5 Noir">
+                            <img src="img/redmi5_or.png" alt="Redmi 5 Or">
+                        </div>
+                    </div>
+                    <div class="productContent">
+                        <h2>Redmi 5 - <span class="productPrice">139.99€</span></h2>
+                        <p>Une batterie endurante, des photos plus lumineuses.</p>
+                        <form class="formProduct" action="" method="get">
+                            <input class="productIdInput" type="hidden" name="productId" value="redmi5">
+                            <input class="productNameInput" type="hidden" name="productName" value="Redmi 5">
+                            <input class="productImageInput" type="hidden" name="productImage" value="redmi5_or.png">
+                            <input class="productDescriptionInput" type="hidden" name="productDescription" value="Une batterie endurante, des photos plus lumineuses.">
+                            <fieldset class="fieldset">
+                                <label class="label forSelect">
+                                    <span class="labelTitle">Couleur</span>
+                                    <select class="productColorSelect select" name="productColor">
+                                        <option value="noir">Noir</option>
+                                        <option value="or" selected="selected">Or</option>
+                                    </select>
+                                </label>
+                            </fieldset>
+                            <fieldset class="fieldset">
+                                <label class="label">
+                                    <span class="labelTitle">Quantité</span>
+                                    <input class="productQuantityInput textField" type="number" name="productQuantity" min="1" step="1" value="1">
+                                </label>
+                            </fieldset>
+                            <input class="productPriceInput" type="hidden" name="productPrice" value="139.99">
+                            <button class="button containedButton" type="submit" value="submit" title="Ajouter au panier">Ajouter au panier</button>
+                        </form>
+                    </div>
+                </article>
+                <article class="product listedProduct" data-productId="redmi6">
+                    <div class="productImage">
+                        <img src="img/redmi6_bleu.png" alt="Redmi 6">
+                        <div class="productThumbnails">
+                            <img src="img/redmi6_noir.png" alt="Redmi 6 Noir">
+                            <img src="img/redmi6_or.png" alt="Redmi 6 Or">
+                            <img src="img/redmi6_bleu.png" alt="Redmi 6 Bleu">
+                        </div>
+                    </div>
+                    <div class="productContent">
+                        <h2>Redmi 6 - <span class="productPrice">159.99€</span></h2>
+                        <p>Un double capteur pour des photos extraordinaires.</p>
+                        <form class="formProduct" action="" method="get">
+                            <input class="productIdInput" type="hidden" name="productId" value="redmi6">
+                            <input class="productNameInput" type="hidden" name="productName" value="Redmi 6">
+                            <input class="productImageInput" type="hidden" name="productImage" value="redmi6_bleu.png">
+                            <input class="productDescriptionInput" type="hidden" name="productDescription" value="Un double capteur pour des photos extraordinaires.">
+                            <fieldset class="fieldset">
+                                <label class="label forSelect">
+                                    <span class="labelTitle">Couleur</span>
+                                    <select class="productColorSelect select" name="productColor">
+                                        <option value="noir">Noir</option>
+                                        <option value="or">Or</option>
+                                        <option value="bleu" selected="selected">Bleu</option>
+                                    </select>
+                                </label>
+                            </fieldset>
+                            <fieldset class="fieldset">
+                                <label class="label">
+                                    <span class="labelTitle">Quantité</span>
+                                    <input class="productQuantityInput textField" type="number" name="productQuantity" min="1" step="1" value="1">
+                                </label>
+                            </fieldset>
+                            <input class="productPriceInput" type="hidden" name="productPrice" value="159.99">
+                            <button class="button containedButton" type="submit" value="submit" title="Ajouter au panier">Ajouter au panier</button>
+                        </form>
+                    </div>
+                </article>
+                <article class="product listedProduct" data-productId="redmis2">
+                    <div class="productImage">
+                        <img src="img/redmis2_gris.png" alt="Redmi S2">
+                        <div class="productThumbnails">
+                            <img src="img/redmis2_gris.png" alt="Redmi S2 Gris">
+                            <img src="img/redmis2_or.png" alt="Redmi S2 Or">
+                            <img src="img/redmis2_rose.png" alt="Redmi S2 Rose">
+                        </div>
+                    </div>
+                    <div class="productContent">
+                        <h2>Redmi S2 - <span class="productPrice">179.99€</span></h2>
+                        <p>Des selfies boostés par IA.</p>
+                        <form class="formProduct" action="" method="get">
+                            <input class="productIdInput" type="hidden" name="productId" value="redmis2">
+                            <input class="productNameInput" type="hidden" name="productName" value="Redmi S2">
+                            <input class="productImageInput" type="hidden" name="productImage" value="redmis2_gris.png">
+                            <input class="productDescriptionInput" type="hidden" name="productDescription" value="Des selfies boostés par IA.">
+                            <fieldset class="fieldset">
+                                <label class="label forSelect">
+                                    <span class="labelTitle">Couleur</span>
+                                    <select class="productColorSelect select" name="productColor">
+                                        <option value="gris" selected="selected">Gris</option>
+                                        <option value="or">Or</option>
+                                        <option value="rose">Rose</option>
+                                    </select>
+                                </label>
+                            </fieldset>
+                            <fieldset class="fieldset">
+                                <label class="label">
+                                    <span class="labelTitle">Quantité</span>
+                                    <input class="productQuantityInput textField" type="number" name="productQuantity" min="1" step="1" value="1">
+                                </label>
+                            </fieldset>
+                            <input class="productPriceInput" type="hidden" name="productPrice" value="179.99">
+                            <button class="button containedButton" type="submit" value="submit" title="Ajouter au panier">Ajouter au panier</button>
+                        </form>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <footer class="footer">
+            <h6>© Félix Barruche - Exercice de boutique en ligne - ECV, M1 Dev, Benjamin Bach</h6>
+        </footer>
+    </div>
+</body>
+</html>
