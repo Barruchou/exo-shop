@@ -6,6 +6,7 @@ window.addEventListener("load", function () {
     toggleDialog('#accountDetail', '.accountButton');
     getAllProductForms('.formProduct');
     changeDisplayProductImage();
+    cartPayment(initCart);
 });
 
 function isNullEmptyOrUndefined(variable) {
@@ -23,6 +24,24 @@ function toggleDialog(containerId, buttonClass) {
                 : cart.classList.add("openDialog")
         })
     });
+}
+
+function cartPayment(cartArray){
+    const cartPayButton = document.getElementById('cartPayButton');
+    cartPayButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        console.log(JSON.stringify(cartArray));
+        // for (var i=0; i<cartArray.length; ++i) {
+        //     if (url.indexOf('?') === -1) {
+        //         url = url + '?array[]=' + a[i];
+        //     }else {
+        //         url = url + '&array[]=' + a[i];
+        //     }
+        // }
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', window.location);
+        xhr.send('LOL');
+    })
 }
 
 function changeDisplayProductImage() {
