@@ -91,6 +91,11 @@ fieldset{
 }
 
 .menu{
+    display: flex;
+    margin: 0;
+}
+
+.connection{
     display: block;
     margin: 0 25px 0 0;
 }
@@ -185,7 +190,7 @@ fieldset{
     background-color: rgba(255, 103, 0, 0.08);
 }
 
-.accountIcon.white{
+.connectionIcon.white{
     background-image: url("img/icon/account-icon-white.svg");
 }
 

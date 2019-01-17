@@ -14,54 +14,56 @@
                 <a href="#"><img src="img/xiaomi_logo.png" alt="Xiaomi"></a>
             </h1>
             <nav class="menu">
-                <button class="accountButton iconButton accountIcon white"></button>
-                <div id="accountDetail" class="dialogContainer smallDialog">
-                    <div id="accountTitle" class="dialogTop dialogTitle">
-                        <span>Connectez-vous !</span>
-                        <button class="accountButton iconButton closeIcon"></button>
-                    </div>
-                    <div id="accountContent" class="dialogMiddle">
-                        <form action="" method="post">
-                            <fieldset class="fieldset">
-                                <label class="label fullLabel">
-                                    <span class="labelTitle">Email</span>
-                                    <input class="textField" type="email" name="fakeEmail">
-                                </label>
-                            </fieldset>
-                            <fieldset class="fieldset">
-                                <label class="label fullLabel">
-                                    <span class="labelTitle">Mot de passe</span>
-                                    <input class="textField" type="password" name="fakePassword">
-                                </label>
-                            </fieldset>
-                        </form>
-                    </div>
-                    <div id="accountActions" class="dialogBottom">
-                        <button id="accountConnectionButton" class="button textButton colored">Connexion</button>
-                    </div>
-                </div>
-                <div class="dialogOverlay accountButton"></div>
-            </nav>
-            <div class="cart">
-                <button class="cartButton iconButton cartIcon white" title="Panier">
-                    <span id="cartBadge" class="badge"></span>
-                </button>
-                <div id="cartDetail" class="dialogContainer">
-                    <div id="cartTitle" class="dialogTop dialogTitle">
-                        <span>Votre panier</span>
-                        <button class="cartButton iconButton closeIcon"></button>
-                    </div>
-                    <div id="cartContent" class="dialogMiddle">
-                        <div id="cartEmpty" class="cartEmpty">
-                            <span>Oh non, votre panier est vide !</span>
+                <div class="connection dialog">
+                    <button class="connectionButton toggleDialog iconButton connectionIcon white"></button>
+                    <div id="connectionDetail" class="dialogContainer smallDialog">
+                        <div id="connectionTitle" class="dialogTop dialogTitle">
+                            <span>Connectez-vous !</span>
+                            <button class="connectionButton toggleDialog iconButton closeIcon"></button>
+                        </div>
+                        <div id="connectionContent" class="dialogMiddle">
+                            <form action="" method="post">
+                                <fieldset class="fieldset">
+                                    <label class="label fullLabel">
+                                        <span class="labelTitle">Email</span>
+                                        <input class="textField" type="email" name="fakeEmail">
+                                    </label>
+                                </fieldset>
+                                <fieldset class="fieldset">
+                                    <label class="label fullLabel">
+                                        <span class="labelTitle">Mot de passe</span>
+                                        <input class="textField" type="password" name="fakePassword">
+                                    </label>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div id="connectionActions" class="dialogBottom">
+                            <button id="submitConnectionButton" class="button textButton colored">Connexion</button>
                         </div>
                     </div>
-                    <div id="cartPay" class="dialogBottom">
-                        <button id="cartPayButton" class="button textButton colored">Commander</button>
-                    </div>
+                    <div class="dialogOverlay connectionButton toggleDialog"></div>
                 </div>
-                <div class="dialogOverlay cartButton"></div>
-            </div>
+                <div class="cart dialog">
+                    <button class="cartButton toggleDialog iconButton cartIcon white" title="Panier">
+                        <span id="cartBadge" class="badge"></span>
+                    </button>
+                    <div id="cartDetail" class="dialogContainer">
+                        <div id="cartTitle" class="dialogTop dialogTitle">
+                            <span>Votre panier</span>
+                            <button class="cartButton toggleDialog iconButton closeIcon"></button>
+                        </div>
+                        <div id="cartContent" class="dialogMiddle">
+                            <div id="cartEmpty" class="cartEmpty">
+                                <span>Oh non, votre panier est vide !</span>
+                            </div>
+                        </div>
+                        <div id="cartPay" class="dialogBottom">
+                            <button id="cartPayButton" class="button textButton colored">Commander</button>
+                        </div>
+                    </div>
+                    <div class="dialogOverlay cartButton toggleDialog"></div>
+                </div>
+            </nav>
         </header>
         <main>
             <section class="highlightedProductContainer">

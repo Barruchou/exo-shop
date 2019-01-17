@@ -1,46 +1,51 @@
-let initCart = getLocalStorageCart();
-
 window.addEventListener("load", function () {
-    updateCartView(initCart);
-    toggleDialog('#cartDetail', '.cartButton');
-    toggleDialog('#accountDetail', '.accountButton');
+    updateCartView();
+    handleDialog();
     getAllProductForms('.formProduct');
     changeDisplayProductImage();
-    cartPayment(initCart);
+    cartPayment();
 });
 
 function isNullEmptyOrUndefined(variable) {
     return (typeof variable === 'undefined' || variable === null || variable === '');
 }
 
-function toggleDialog(containerId, buttonClass) {
-    const cart = document.querySelector(containerId);
-    const cartButtons = document.querySelectorAll(buttonClass);
-    cartButtons.forEach(function (cartButton) {
-        cartButton.addEventListener('click', function (e) {
-            e.preventDefault();
-            cart.classList.contains("openDialog")
-                ? cart.classList.remove("openDialog")
-                : cart.classList.add("openDialog")
-        })
+function handleDialog() {
+    const dialogs = document.querySelectorAll('.dialog');
+    dialogs.forEach(function (dialog) {
+        const dialogContainers = dialog.querySelectorAll('.dialogContainer');
+        const dialogButtons = dialog.querySelectorAll('.toggleDialog');
+        dialogButtons.forEach(function (dialogButton) {
+            dialogButton.addEventListener('click', function (e) {
+                e.preventDefault();
+                dialogContainers.forEach(function (dialogContainer) {
+                    dialogContainer.classList.contains("openDialog")
+                        ? dialogContainer.classList.remove("openDialog")
+                        : dialogContainer.classList.add("openDialog");
+                });
+            })
+        });
     });
 }
 
-function cartPayment(cartArray){
+function cartPayment(){
     const cartPayButton = document.getElementById('cartPayButton');
     cartPayButton.addEventListener('click', function (e) {
         e.preventDefault();
-        console.log(JSON.stringify(cartArray));
-        // for (var i=0; i<cartArray.length; ++i) {
-        //     if (url.indexOf('?') === -1) {
-        //         url = url + '?array[]=' + a[i];
-        //     }else {
-        //         url = url + '&array[]=' + a[i];
-        //     }
-        // }
-        let xhr = new XMLHttpRequest();
-        xhr.open('GET', window.location);
-        xhr.send('LOL');
+        const cartFromLocalStorage = getLocalStorageCart();
+        const cartContent = JSON.stringify(cartFromLocalStorage);
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', window.location, true);
+        xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                alert('User\'s name is ' + xhr.responseText);
+            }
+            else {
+                alert('Request failed.  Returned status of ' + xhr.responseText);
+            }
+        };
+        xhr.send(cartContent);
     })
 }
 
@@ -102,7 +107,8 @@ function addProductToCart(cartArray, productObject) {
     }
 }
 
-function updateCartView(cartArray) {
+function updateCartView() {
+    const cart = getLocalStorageCart();
     const cartEmpty = document.getElementById('cartEmpty');
     const cartPayButton = document.getElementById('cartPayButton');
     const cartProductsList = document.getElementById('cartList');
@@ -117,7 +123,7 @@ function updateCartView(cartArray) {
     productsList.setAttribute('id', 'cartList');
     productsList.classList.add("cartList");
     cartContent.appendChild(productsList);
-    addProductInCart(cartArray, productsList);
+    addProductInCart(cart, productsList);
 
     if (cartProducts.length > 0){
         cartPayButton.classList.remove('disabled');
@@ -206,12 +212,12 @@ function deleteProduct(cartArray, productId, productColor) {
 }
 
 function updateLocalStorageCartAndView(cartArray){
-    localStorage.setItem('initCart', JSON.stringify(cartArray));
-    updateCartView(cartArray);
+    localStorage.setItem('cart', JSON.stringify(cartArray));
+    updateCartView();
 }
 
 function getLocalStorageCart() {
-    return localStorage.getItem('initCart') !== null
-        ? JSON.parse(localStorage.getItem('initCart'))
+    return localStorage.getItem('cart') !== null
+        ? JSON.parse(localStorage.getItem('cart'))
         : [];
 }
