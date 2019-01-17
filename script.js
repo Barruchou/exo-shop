@@ -35,17 +35,10 @@ function cartPayment(){
         const cartFromLocalStorage = getLocalStorageCart();
         const cartContent = JSON.stringify(cartFromLocalStorage);
         const xhr = new XMLHttpRequest();
-        xhr.open('POST', window.location, true);
+        xhr.open('POST', '/', true);
         xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                alert('User\'s name is ' + xhr.responseText);
-            }
-            else {
-                alert('Request failed.  Returned status of ' + xhr.responseText);
-            }
-        };
         xhr.send(cartContent);
+        alert("Vous pouvez ouvrir l'inspecteur pour voir le contenu de la requête.");
     })
 }
 
